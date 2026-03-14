@@ -1,64 +1,205 @@
 /*
-  NERV UI for Obsidian
-  Inspired by MAGI and EVA-01 Interfaces
+  NERV Terminal Design System v1.0
+  Industrial Brutalist UI inspired by Neon Genesis Evangelion
   Author: NERV Technical Department
 */
 
 .theme-dark {
-	/* Base NERV Palette */
-	--background-primary: #0a0a0a;
-	--background-secondary: #0f0f0f;
+	/* ==========================================
+       TIER 1: FOUNDATION (Raw Values)
+       ========================================== */
+	--color-nerv-orange: #ff9900;
+	--color-nerv-orange-rgb: 255, 153, 0;
+	--color-nerv-red: #ff0000;
+	--color-nerv-red-rgb: 255, 0, 0;
+	--color-nerv-blue: #0055ff;
+	--color-nerv-blue-rgb: 0, 85, 255;
+	--color-nerv-bg: #0d0d0d;
+	--dimension-grid: 4px;
+
+	/* ==========================================
+       TIER 2: SEMANTIC (Intent-Based Aliases)
+       ========================================== */
+	--color-text-alert: var(--color-nerv-orange);
+	--color-text-critical: var(--color-nerv-red);
+	--color-text-sync: var(--color-nerv-blue);
+	--color-bg-base: var(--color-nerv-bg);
+	--spacing-ui-density: 2px;
+	--br-industrial: 0px; /* Industrial Brutalism: No rounded corners */
+
+	/* ==========================================
+       TIER 3: COMPONENT (Obsidian Mapping)
+       ========================================== */
+	--background-primary: var(--color-bg-base);
+	--background-secondary: #121212;
 	--background-secondary-alt: #1a1a1a;
 
-	/* NERV Orange and Red Accents */
-	--text-normal: #ff7b00;
+	--text-normal: var(--color-text-alert);
 	--text-muted: #8b4513;
 	--text-faint: #4a2c10;
-	--text-accent: #ff4500;
-	--text-accent-hover: #ff6a00;
+	--text-accent: var(--color-nerv-orange);
+	--text-accent-hover: #ffb84d;
 
-	/* Link and Interactive Colors */
-	--link-color: #ff8c00;
-	--link-color-hover: #ffa500;
-	--interactive-accent: #ff7b00;
-	--interactive-accent-hover: #ff9d00;
+	--interactive-accent: var(--color-nerv-orange);
+	--interactive-accent-hover: #ffb84d;
 
-	/* UI Borders and Dividers */
-	--divider-color: #5a3a10;
-	--background-modifier-border: #3a2a10;
+	--divider-color: #332200;
+	--background-modifier-border: #221100;
 
-	/* Scrollbars */
-	--scrollbar-active-thumb-bg: #ff7b00;
-	--scrollbar-bg: #1a1a1a;
-	--scrollbar-thumb-bg: #8b4513;
-
-	/* Cursor and Selection */
-	--text-selection: rgba(255, 123, 0, 0.2);
-	--caret-color: #ff7b00;
+	/* Global Overrides */
+	--nav-item-color-active: var(--color-nerv-orange);
+	--status-bar-background: var(--color-bg-base);
+	--radius-s: var(--br-industrial);
+	--radius-m: var(--br-industrial);
+	--radius-l: var(--br-industrial);
 }
 
-/* Geometric Layout Tweaks */
+/* ==========================================
+   PRODUCTION IMPLEMENTATION: HIGH DENSITY
+   ========================================== */
 
+/* Remove rounded corners everywhere */
+* {
+	border-radius: var(--br-industrial) !important;
+}
+
+/* Nav & File Explorer Saturation */
+.nav-folder,
+.nav-file {
+	--nav-item-size: 1.1rem;
+	--nav-item-spacing: var(--spacing-ui-density);
+}
+
+.nav-file-title,
+.nav-folder-title {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-family: "JetBrains Mono", "Roboto Mono", monospace;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+}
+
+/* Status Bar */
+.status-bar {
+	font-family: "JetBrains Mono", monospace;
+	text-transform: uppercase;
+	font-size: 10px;
+	border-top: 1px solid var(--divider-color);
+}
+
+/* Workspace Layout */
 .workspace-leaf {
 	border: 1px solid var(--divider-color);
 }
 
 .workspace-tab-header-container {
-	border-bottom: 2px solid var(--interactive-accent);
+	border-bottom: 2px solid var(--color-nerv-orange);
 }
 
 .workspace-tab-header.is-active {
-	background-color: var(--interactive-accent);
-	color: #000;
+	background-color: var(--color-nerv-orange);
+	color: #000 !important;
+	font-weight: bold;
 }
 
-.titlebar {
-	background-color: #000;
-	border-bottom: 1px solid var(--divider-color);
+/* ==========================================
+   INTERACTION & STATE LOGIC (Alert Levels)
+   ========================================== */
+
+/* Sync Heartbeat Pulse */
+@keyframes sync-pulse {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.4;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
-/* NERV-style font fallback */
+.sync-status-icon.is-progressing {
+	animation: sync-pulse 2000ms linear infinite;
+}
+
+/* Flicker Animation for Terminal Alert */
+@keyframes alert-flicker {
+	0% {
+		opacity: 1;
+	}
+	5% {
+		opacity: 0.2;
+	}
+	10% {
+		opacity: 1;
+	}
+	15% {
+		opacity: 0.8;
+	}
+	20% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Pattern Blue Alert: #alert/angel */
+.markdown-source-view.mod-cm6[data-tags*="alert/angel"],
+.markdown-rendered[data-tags*="alert/angel"] {
+	background-color: rgba(var(--color-nerv-blue-rgb), 0.05) !important;
+	outline: 2px solid var(--color-nerv-blue);
+	outline-offset: -2px;
+}
+
+/* Pattern Red Alert: #alert/terminal */
+.markdown-source-view.mod-cm6[data-tags*="alert/terminal"],
+.markdown-rendered[data-tags*="alert/terminal"] {
+	background-color: rgba(var(--color-nerv-red-rgb), 0.05) !important;
+	outline: 2px solid var(--color-nerv-red);
+	outline-offset: -2px;
+	animation: alert-flicker 100ms infinite;
+}
+
+/* ==========================================
+   VISUAL EFFECTS: CRT SCANLINES
+   ========================================== */
+
+.workspace-leaf:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:
+		linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
+		linear-gradient(
+			90deg,
+			rgba(255, 0, 0, 0.02),
+			rgba(0, 255, 0, 0.01),
+			rgba(0, 0, 80, 0.02)
+		);
+	background-size:
+		100% 3px,
+		3px 100%;
+	pointer-events: none;
+	z-index: 10;
+	opacity: 0.6;
+}
+
+/* Typography Overrides */
 body {
-	font-family: "Inter", "Roboto Mono", "MS Gothic", sans-serif;
-	letter-spacing: 0.05em;
+	font-family: "JetBrains Mono", "Roboto Mono", "MS Gothic", sans-serif;
+	letter-spacing: 0.03em;
+}
+
+h1,
+h2,
+h3 {
+	text-transform: uppercase;
+	border-bottom: 1px solid var(--divider-color);
+	padding-bottom: 4px;
+	margin-top: 1.5em;
 }
