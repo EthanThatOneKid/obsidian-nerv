@@ -4,7 +4,7 @@ An industrial brutalist command center interface for Obsidian, inspired by the M
 
 ## Gallery
 
-![NERV Terminal Walkthrough](demo/demo.mp4)
+<video src="demo/demo.mp4" controls width="100%"></video>
 
 ## Local testing and development
 
