@@ -2,6 +2,14 @@
 
 An industrial brutalist command center interface for Obsidian, inspired by the MAGI and EVA-01 displays from _Neon Genesis Evangelion_.
 
+## Gallery
+
+![MAGI System Diagnostic](screenshots/magi-diagnostic-melchior-1.png)
+![Evangelion Unit Status](screenshots/evangelion-unit-status.png)
+![Pilot Biometric Snapshot](screenshots/pilot-biometrics-eva-01-ikari.png)
+![MAGI Consensus Diagram](screenshots/magi-consensus-operation-yashima.png)
+![NERV Network Topology](screenshots/nerv-facilities-and-reference-codes.png)
+
 ## Local testing and development
 
 To apply and test the NERV UI in your own Obsidian vault:
@@ -143,3 +151,27 @@ Releasing a new version of your theme is the same as releasing the initial versi
 ```
 
 What's important to note here is: the new version is included as the "key" and the "value" is the minimum version of Obsidian that your theme compatible with. So if the new version of your theme is only compatible with an Insider version of Obsidian, it's important to set this value accordingly. This will prevent users on older versions of Obsidian from updating to the newer version of your theme.
+
+## Citations and accreditation
+
+This project is a non-commercial fan tribute to the visual world of _Neon Genesis Evangelion_.
+
+### Official credits
+
+- **Original Series & IP:** Created by **Hideaki Anno**.
+- **Production Studios:** **Studio Gainax** (Original Series) and **Studio Khara** (Rebuild of Evangelion).
+- **IP Management:** All rights and trademarks are managed by **Groundworks Co., Ltd.** on behalf of Studio Khara.
+
+### Design inspiration
+
+The visual language of this theme is a forensic reconstruction based on the **Fictional User Interface (FUI)** designs seen in the original 1995 series and the _Rebuild_ films. We acknowledge the groundbreaking work of the original GAINAX and Khara design teams who defined the "Narrative Friction" aesthetic.
+
+### Community attribution
+
+Special thanks to the **Evangelion fandom** and the contributors to resources like **EvaGeeks**, whose meticulous documentation of tech-readouts and UI frames made this reconstruction possible.
+
+Special recognition goes to **Pedro Fleming** for his exceptional **FUI recreations**, which served as a vital reference for the technical accuracy and motion aesthetics of these NERV terminal screens.
+
+---
+
+_God's in his heaven. All's right with the world._
