@@ -5,9 +5,7 @@ MAGI and EVA-01 displays from _Neon Genesis Evangelion_.
 
 ## Gallery
 
-<p align="center" width="100%">
-<video src="demo/demo.mp4" width="80%" controls></video>
-</p>
+[▶ Watch the demo](demo/demo.mp4)
 
 ## Local testing and development
 
