@@ -1,28 +1,31 @@
-This is a sample theme for Obsidian ([https://obsidian.md](https://obsidian.md/)).
+# NERV UI for Obsidian
 
-## First Time publishing a theme?
+An industrial brutalist command center interface for Obsidian, inspired by the MAGI and EVA-01 displays from *Neon Genesis Evangelion*.
 
-### Quick start
+## Local Testing & Development
 
-<img width="244" alt="Pasted image 20220822135601" src="https://user-images.githubusercontent.com/693981/186000386-4f4da987-fcaf-4aa5-aed4-e34b5901255d.png">
+To apply and test the NERV UI in your own Obsidian vault:
 
-First, choose **Use this template**. That will create a copy of this repository (repo) under your Github profile. Then, you will want to _clone_ your new repository to your computer.
+1. **Locate your Vault's Theme Folder**:
+   - In your vault, navigate to `.obsidian/themes/`.
+2. **Setup the Project**:
+   - Clone or copy this repository into that folder: `.obsidian/themes/obsidian-nerv/`.
+   - Alternatively, you can use a symlink (recommended for active development):
+     ```bash
+     # Windows (Command Prompt as Admin)
+     mklink /D "C:\Path\To\Your\Vault\.obsidian\themes\obsidian-nerv" "c:\Users\ethan\Documents\GitHub\obsidian-nerv"
+     ```
+3. **Activate the Theme**:
+   - Open Obsidian **Settings > Appearance**.
+   - Select **NERV UI** from the **Themes** dropdown.
+   - Set **Base color scheme** to **Dark**.
+4. **Development Workflow**:
+   - This project uses **Prettier** for formatting. Run `npm run format` after making changes.
+   - Obsidian will automatically hot-reload your theme as you save `theme.css`.
 
-Once you have the repo locally on your computer, there are a couple of placeholder fields you will need to fill in.
+For advanced usage (Pattern Red/Blue alerts), see the [Operator's Manual](file:///C:/Users/ethan/.gemini/antigravity/brain/defc4dbd-76ef-4830-b1d1-bd25f754ed0a/operators_manual.md).
 
-1. Inside the `manifest.json` file, change the "name" field to whatever you want the name of your theme to be. For example:
-
-```json
-{
-	"name": "Moonstone",
-	"version": "0.0.0",
-	"minAppVersion": "1.0.0"
-}
-```
-
-2. Also inside the manifest.json file, you can include your name under next to the "author" field.
-
-After you have those fields configured, all that's left to do is add your styles! All of your CSS needs to be inside the file `theme.css` which is located at root of your repository.
+---
 
 ## Adding your theme to the Theme Gallery
 
