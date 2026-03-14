@@ -1,6 +1,6 @@
 {
-	"name": "NERV UI",
-	"version": "0.1.0",
-	"author": "NERV Technical Department",
-	"minAppVersion": "1.0.0"
+  "name": "NERV-Terminal",
+  "version": "0.1.0",
+  "author": "NERV",
+  "minAppVersion": "0.15.0"
 }
