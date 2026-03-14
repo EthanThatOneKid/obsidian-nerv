@@ -23,7 +23,7 @@ To apply and test the NERV UI in your own Obsidian vault:
     - This project uses **Prettier** for formatting. Run `npm run format` after making changes.
     - Obsidian will automatically hot-reload your theme as you save `theme.css`.
 
-For advanced usage (Pattern Red/Blue alerts), see the [Operator's Manual](file:///C:/Users/ethan/.gemini/antigravity/brain/defc4dbd-76ef-4830-b1d1-bd25f754ed0a/operators_manual.md).
+For advanced usage (pattern red/blue alerts), see the [Operator's Manual](./operators_manual.md).
 
 ---
 
