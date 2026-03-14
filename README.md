@@ -2,24 +2,24 @@
 
 An industrial brutalist command center interface for Obsidian, inspired by the MAGI and EVA-01 displays from _Neon Genesis Evangelion_.
 
-## Local Testing & Development
+## Local testing and development
 
 To apply and test the NERV UI in your own Obsidian vault:
 
-1. **Locate your Vault's Theme Folder**:
+1. **Locate your vault's theme folder**:
     - In your vault, navigate to `.obsidian/themes/`.
-2. **Setup the Project**:
+2. **Set up the project**:
     - Clone or copy this repository into that folder: `.obsidian/themes/obsidian-nerv/`.
     - Alternatively, you can use a symlink (recommended for active development):
         ```bash
         # Windows (Command Prompt as Admin)
         mklink /D "C:\Path\To\Your\Vault\.obsidian\themes\obsidian-nerv" "c:\Users\ethan\Documents\GitHub\obsidian-nerv"
         ```
-3. **Activate the Theme**:
+3. **Activate the theme**:
     - Open Obsidian **Settings > Appearance**.
     - Select **NERV UI** from the **Themes** dropdown.
     - Set **Base color scheme** to **Dark**.
-4. **Development Workflow**:
+4. **Development workflow**:
     - This project uses **Prettier** for formatting. Run `npm run format` after making changes.
     - Obsidian will automatically hot-reload your theme as you save `theme.css`.
 
@@ -27,7 +27,7 @@ For advanced usage (Pattern Red/Blue alerts), see the [Operator's Manual](file:/
 
 ---
 
-## Adding your theme to the Theme Gallery
+## Adding your theme to the theme gallery
 
 ### Add a screenshot thumbnail
 
@@ -40,7 +40,7 @@ The recommended size is 512x288.
 
 To have your theme included in the Theme Gallery, you will need to submit a Pull Request to [`obsidianmd/obsidian-releases`](https://github.com/obsidianmd/obsidian-releases#community-theme).
 
-## Releasing Versions _(Optional)_
+## Releasing versions _(optional)_
 
 If your theme is getting more and more complex, you might want to start thinking about how your theme will stay compatible with different versions of Obsidian. Introduced in v0.16 of Obsidian, themes support [Github Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository). This means that you can specify which versions of your theme are compatible with which versions of Obsidian.
 
