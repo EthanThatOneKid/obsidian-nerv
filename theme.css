@@ -29,8 +29,8 @@
 	/* --- raw palette --- */
 	--nerv-crimson: #cc3300;
 	--nerv-crimson-rgb: 204, 51, 0;
-	--nerv-amber: #cc6633;
-	--nerv-amber-rgb: 204, 102, 51;
+	--nerv-amber: #d4845a;
+	--nerv-amber-rgb: 212, 132, 90;
 	--nerv-emergency: #ff2200;
 	--nerv-emergency-rgb: 255, 34, 0;
 	--nerv-blue: #3355aa;
@@ -39,9 +39,9 @@
 	--nerv-yellow-rgb: 204, 170, 0;
 	--nerv-black: #080808;
 	--nerv-surface: #0e0c0a;
-	--nerv-border: #1a1210;
-	--nerv-muted: #5c3a2a;
-	--nerv-faint: #2e1d15;
+	--nerv-border: #2a1e18;
+	--nerv-muted: #8c6a55;
+	--nerv-faint: #4a3328;
 
 	/* --- semantic --- */
 	--br: 0px;
@@ -68,8 +68,8 @@
 	--text-on-accent-inverted: var(--nerv-crimson);
 	--text-error: var(--nerv-emergency);
 	--text-error-hover: #ff4422;
-	--text-accent: var(--nerv-crimson);
-	--text-accent-hover: #dd4411;
+	--text-accent: #dd5522;
+	--text-accent-hover: #ee6633;
 
 	--interactive-normal: #110e0c;
 	--interactive-hover: #1a1412;
@@ -78,7 +78,7 @@
 	--interactive-accent-hover: #dd4411;
 
 	--scrollbar-bg: transparent;
-	--scrollbar-thumb-bg: rgba(204, 51, 0, 0.25);
+	--scrollbar-thumb-bg: rgba(204, 51, 0, 0.35);
 	--scrollbar-active-thumb-bg: rgba(204, 51, 0, 0.5);
 
 	--highlight-mix-blend-mode: lighten;
@@ -86,7 +86,7 @@
 	--titlebar-background: var(--nerv-black);
 	--titlebar-background-focused: var(--nerv-surface);
 
-	--tab-text-color: var(--nerv-muted);
+	--tab-text-color: #9a7a65;
 	--tab-text-color-focused: var(--nerv-amber);
 	--tab-text-color-focused-active: var(--nerv-crimson);
 	--tab-text-color-focused-active-current: #080808;
@@ -162,7 +162,7 @@
 	--font-interface: "JetBrains Mono", "Fira Code", "Roboto Mono", monospace;
 
 	--status-bar-font-size: 11px;
-	--status-bar-text-color: var(--nerv-muted);
+	--status-bar-text-color: #9a7a65;
 	--status-bar-background: var(--nerv-black);
 }
 
