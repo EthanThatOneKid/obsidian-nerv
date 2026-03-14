@@ -1,215 +1,664 @@
 /*
-  NERV Terminal FUI System v2.0
-  Industrial Logic & Forensic Reconstruction
-  Inspired by Ikuto Yamashita's "Sore o nasumono"
-*/
+ * ============================================================
+ * NERV TERMINAL SYSTEM — Obsidian Theme
+ * v3.0 · Forensic Reconstruction from NGE Production Frames
+ * ============================================================
+ *
+ * Palette extracted from Central Dogma, MAGI, and Entry Plug
+ * displays as seen in the original TV series and End of
+ * Evangelion. The dominant hue is a deep, warm CRIMSON-RED
+ * with amber data accents — NOT the bright web-orange of
+ * earlier drafts.
+ *
+ * Reference hierarchy (darkest → brightest):
+ *   Background   #080808  (CRT off-black)
+ *   Surface      #0e0c0a  (panel bg)
+ *   Border       #1a1210  (subtle divider)
+ *   Muted text   #5c3a2a  (idle labels)
+ *   Body text    #cc6633  (NERV amber — warm, not orange)
+ *   Accent       #cc3300  (NERV crimson — Central Dogma red)
+ *   Alert        #ff2200  (emergency red — 10Hz flicker)
+ *   Data blue    #3355aa  (Pattern Blue sensors)
+ *   Data yellow  #ccaa00  (telemetry / sync markers)
+ */
 
+/* ============================================================
+   1. FOUNDATION TOKENS
+   ============================================================ */
 .theme-dark {
-	/* ==========================================
-     TIER 1: FOUNDATION (Archive-Correct)
-     ========================================== */
-	--nerv-orange: #ff9900;
-	--nerv-orange-rgb: 255, 153, 0;
-	--nerv-red: #ff0000;
-	--nerv-red-rgb: 255, 0, 0;
-	--nerv-blue: #0055ff;
-	--nerv-blue-rgb: 0, 85, 255;
-	--nerv-bg: #0d0d0d;
-	--grid-base: 4px;
+	/* --- raw palette --- */
+	--nerv-crimson: #cc3300;
+	--nerv-crimson-rgb: 204, 51, 0;
+	--nerv-amber: #cc6633;
+	--nerv-amber-rgb: 204, 102, 51;
+	--nerv-emergency: #ff2200;
+	--nerv-emergency-rgb: 255, 34, 0;
+	--nerv-blue: #3355aa;
+	--nerv-blue-rgb: 51, 85, 170;
+	--nerv-yellow: #ccaa00;
+	--nerv-yellow-rgb: 204, 170, 0;
+	--nerv-black: #080808;
+	--nerv-surface: #0e0c0a;
+	--nerv-border: #1a1210;
+	--nerv-muted: #5c3a2a;
+	--nerv-faint: #2e1d15;
 
-	/* ==========================================
-     TIER 2: SEMANTIC (Intent-Based)
-     ========================================== */
-	--color-text-alert: var(--nerv-orange);
-	--color-text-critical: var(--nerv-red);
-	--color-text-sync: var(--nerv-blue);
-	--color-bg-base: var(--nerv-bg);
-	--spacing-density: 2px;
-	--br-brutal: 0px;
+	/* --- semantic --- */
+	--br: 0px;
 
-	/* ==========================================
-     TIER 3: COMPONENT (Obsidian Implementation)
-     ========================================== */
-	--background-primary: var(--color-bg-base);
-	--background-secondary: #121212;
-	--background-secondary-alt: #0a0a0a;
+	/* --- Obsidian overrides --- */
+	--background-primary: var(--nerv-black);
+	--background-primary-alt: var(--nerv-surface);
+	--background-secondary: var(--nerv-surface);
+	--background-secondary-alt: #060504;
+	--background-modifier-border: var(--nerv-border);
+	--background-modifier-form-field: #110e0c;
+	--background-modifier-form-field-highlighted: #1a1412;
+	--background-modifier-box-shadow: rgba(0, 0, 0, 0.6);
+	--background-modifier-success: #1a3320;
+	--background-modifier-error: #331111;
+	--background-modifier-error-rgb: 51, 17, 17;
+	--background-modifier-error-hover: #441515;
+	--background-modifier-cover: rgba(8, 8, 8, 0.86);
 
-	--text-normal: var(--color-text-alert);
-	--text-muted: #8b4513;
-	--text-faint: #331a00;
-	--text-accent: var(--nerv-orange);
+	--text-normal: var(--nerv-amber);
+	--text-muted: var(--nerv-muted);
+	--text-faint: var(--nerv-faint);
+	--text-on-accent: #080808;
+	--text-on-accent-inverted: var(--nerv-crimson);
+	--text-error: var(--nerv-emergency);
+	--text-error-hover: #ff4422;
+	--text-accent: var(--nerv-crimson);
+	--text-accent-hover: #dd4411;
 
-	--interactive-accent: var(--nerv-orange);
-	--interactive-accent-hover: #ffb84d;
+	--interactive-normal: #110e0c;
+	--interactive-hover: #1a1412;
+	--interactive-accent: var(--nerv-crimson);
+	--interactive-accent-rgb: var(--nerv-crimson-rgb);
+	--interactive-accent-hover: #dd4411;
 
-	--divider-color: #442200;
-	--background-modifier-border: #221100;
+	--scrollbar-bg: transparent;
+	--scrollbar-thumb-bg: rgba(204, 51, 0, 0.25);
+	--scrollbar-active-thumb-bg: rgba(204, 51, 0, 0.5);
 
-	/* Typography Logic */
-	--font-header: "Matisse EB", "Impact", "Arial Black", sans-serif;
-	--font-data: "JetBrains Mono", "Roboto Mono", monospace;
+	--highlight-mix-blend-mode: lighten;
 
-	--radius-s: var(--br-brutal);
-	--radius-m: var(--br-brutal);
-	--radius-l: var(--br-brutal);
+	--titlebar-background: var(--nerv-black);
+	--titlebar-background-focused: var(--nerv-surface);
+
+	--tab-text-color: var(--nerv-muted);
+	--tab-text-color-focused: var(--nerv-amber);
+	--tab-text-color-focused-active: var(--nerv-crimson);
+	--tab-text-color-focused-active-current: #080808;
+	--tab-background-active: var(--nerv-crimson);
+
+	--divider-color: var(--nerv-border);
+
+	/* Heading colors — crimson hierarchy */
+	--h1-color: var(--nerv-crimson);
+	--h2-color: var(--nerv-crimson);
+	--h3-color: var(--nerv-amber);
+	--h4-color: var(--nerv-amber);
+	--h5-color: var(--nerv-muted);
+	--h6-color: var(--nerv-muted);
+
+	--strong-color: var(--nerv-crimson);
+	--em-color: var(--nerv-yellow);
+	--bold-color: var(--nerv-crimson);
+	--italic-color: var(--nerv-yellow);
+
+	--link-color: var(--nerv-blue);
+	--link-color-hover: #4477cc;
+	--link-external-color: var(--nerv-blue);
+	--link-external-color-hover: #4477cc;
+	--link-unresolved-color: var(--nerv-muted);
+
+	--tag-color: var(--nerv-yellow);
+	--tag-background: rgba(204, 170, 0, 0.08);
+	--tag-border-color: rgba(204, 170, 0, 0.2);
+
+	--inline-code-color: var(--nerv-yellow);
+	--code-normal: var(--nerv-amber);
+	--code-background: #0c0a08;
+
+	--blockquote-border-color: var(--nerv-crimson);
+
+	--table-header-color: var(--nerv-crimson);
+	--table-header-background: rgba(204, 51, 0, 0.06);
+
+	--checkbox-color: var(--nerv-crimson);
+	--checkbox-color-hover: #dd4411;
+	--checkbox-border-color: var(--nerv-muted);
+
+	--list-marker-color: var(--nerv-crimson);
+
+	--nav-item-color: var(--nerv-muted);
+	--nav-item-color-hover: var(--nerv-amber);
+	--nav-item-color-active: var(--nerv-crimson);
+	--nav-item-background-hover: rgba(204, 51, 0, 0.06);
+	--nav-item-background-active: rgba(204, 51, 0, 0.1);
+
+	--graph-line: var(--nerv-border);
+	--graph-node: var(--nerv-crimson);
+	--graph-node-focused: var(--nerv-emergency);
+	--graph-node-tag: var(--nerv-yellow);
+	--graph-node-attachment: var(--nerv-blue);
+
+	--callout-default: var(--nerv-crimson);
+
+	--radius-s: var(--br);
+	--radius-m: var(--br);
+	--radius-l: var(--br);
+	--radius-xl: var(--br);
+
+	--input-shadow: 0 0 0 0;
+	--input-shadow-hover: 0 0 0 0;
+	--shadow-s: 0 1px 3px rgba(0, 0, 0, 0.5);
+	--shadow-l: 0 4px 18px rgba(0, 0, 0, 0.7);
+
+	/* typography */
+	--font-text: "JetBrains Mono", "Fira Code", "Roboto Mono", monospace;
+	--font-monospace: "JetBrains Mono", "Fira Code", "Roboto Mono", monospace;
+	--font-interface: "JetBrains Mono", "Fira Code", "Roboto Mono", monospace;
+
+	--status-bar-font-size: 11px;
+	--status-bar-text-color: var(--nerv-muted);
+	--status-bar-background: var(--nerv-black);
 }
 
-/* ==========================================
-   TYPOGRAPHIC AGGRESSION
-   ========================================== */
+/* ============================================================
+   2. GLOBAL RESETS
+   ============================================================ */
+* {
+	border-radius: 0px !important;
+}
 
-h1,
-h2,
-h3,
-h4,
-.view-header-title {
-	font-family: var(--font-header);
+body {
+	background-color: var(--nerv-black);
+}
+
+/* ============================================================
+   3. TYPOGRAPHY
+   ============================================================ */
+.markdown-rendered h1,
+.markdown-rendered h2,
+.cm-header-1,
+.cm-header-2 {
 	text-transform: uppercase;
-	transform: scaleX(0.85); /* Forensic Compression */
-	transform-origin: left;
-	letter-spacing: 0.1em;
-	margin-top: 1.5em;
-	border-bottom: 2px solid var(--divider-color);
-	padding-bottom: 2px;
+	letter-spacing: 0.15em;
+	padding-bottom: 4px;
+	border-bottom: 2px solid var(--nerv-crimson);
+	text-shadow: 0 0 15px rgba(var(--nerv-crimson-rgb), 0.5);
 }
 
-body,
-.markdown-source-view,
-.markdown-rendered {
-	font-family: var(--font-data);
-	font-size: 13px;
-	line-height: 1.4;
-	letter-spacing: 0.02em;
+.markdown-rendered h3,
+.markdown-rendered h4,
+.cm-header-3,
+.cm-header-4 {
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	text-shadow: 0 0 8px rgba(var(--nerv-amber-rgb), 0.3);
 }
 
-/* Technical Data Readouts */
-code,
-.cm-inline-code,
-.status-bar,
+.markdown-rendered h5,
+.markdown-rendered h6 {
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+
+/* Strong / bold = NERV crimson with glow */
+strong,
+.cm-strong {
+	color: var(--nerv-crimson);
+	text-shadow: 0 0 6px rgba(var(--nerv-crimson-rgb), 0.4);
+}
+
+/* Emphasis = data yellow */
+em,
+.cm-em {
+	color: var(--nerv-yellow);
+}
+
+/* ============================================================
+   4. WORKSPACE / LAYOUT
+   ============================================================ */
+
+/* Sidebar */
+.workspace-split.mod-left-split {
+	border-right: 1px solid var(--nerv-border);
+}
+
+.workspace-split.mod-right-split {
+	border-left: 1px solid var(--nerv-border);
+}
+
+/* File explorer — compressed density */
 .nav-file-title,
 .nav-folder-title {
-	font-family: var(--font-data);
 	font-size: 11px;
 	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	padding: 2px 6px;
 }
 
-/* ==========================================
-   INDUSTRIAL BRUTALISM: LAYOUT
-   ========================================== */
-
-* {
-	border-radius: var(--br-brutal) !important;
+.nav-file-title.is-active {
+	background-color: rgba(var(--nerv-crimson-rgb), 0.12);
+	color: var(--nerv-crimson);
+	box-shadow: inset 3px 0 0 var(--nerv-crimson);
 }
 
-/* Data Saturation */
-.nav-folder,
-.nav-file {
-	--nav-item-spacing: 1px;
+/* Tabs */
+.workspace-tab-header {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	border-bottom: 1px solid var(--nerv-border);
 }
 
-.nav-file-title,
-.nav-folder-title {
-	padding: 1px 4px;
+.workspace-tab-header.is-active {
+	background-color: var(--nerv-crimson) !important;
+	color: var(--nerv-black) !important;
+	box-shadow:
+		0 0 12px rgba(var(--nerv-crimson-rgb), 0.35),
+		inset 0 -2px 0 rgba(0, 0, 0, 0.2);
 }
 
+/* View headers */
+.view-header-title {
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--nerv-amber);
+}
+
+/* Status bar */
+.status-bar {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	border-top: 1px solid var(--nerv-border);
+}
+
+/* Workspace leaf borders */
 .workspace-leaf {
-	border: 1px solid var(--divider-color);
-	position: relative;
+	border: 1px solid var(--nerv-border);
 }
 
-/* HUD Viewport Brackets */
-.workspace-leaf:before {
-	content: "";
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	width: 20px;
-	height: 20px;
-	border-top: 2px solid var(--nerv-orange);
-	border-left: 2px solid var(--nerv-orange);
-	z-index: 5;
-	pointer-events: none;
+/* ============================================================
+   5. EDITOR CONTENT
+   ============================================================ */
+
+/* Inline code */
+.markdown-rendered code:not(pre code),
+.cm-inline-code {
+	color: var(--nerv-yellow);
+	background-color: rgba(204, 170, 0, 0.06);
+	border: 1px solid rgba(204, 170, 0, 0.12);
+	padding: 1px 4px;
+	font-size: 0.9em;
+}
+
+/* Code blocks */
+.markdown-rendered pre,
+.cm-s-obsidian .HyperMD-codeblock {
+	background-color: #060504 !important;
+	border: 1px solid var(--nerv-border);
+	border-left: 3px solid var(--nerv-crimson);
+}
+
+/* Blockquotes */
+.markdown-rendered blockquote {
+	border-left: 3px solid var(--nerv-crimson);
+	background-color: rgba(var(--nerv-crimson-rgb), 0.03);
+	padding: 8px 16px;
+}
+
+/* Horizontal rules */
+.markdown-rendered hr {
+	border: none;
+	border-top: 1px solid var(--nerv-crimson);
 	opacity: 0.4;
 }
 
-.workspace-leaf:after {
-	content: "";
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
-	width: 20px;
-	height: 20px;
-	border-bottom: 2px solid var(--nerv-orange);
-	border-right: 2px solid var(--nerv-orange);
-	z-index: 5;
-	pointer-events: none;
-	opacity: 0.4;
+/* Tables */
+.markdown-rendered table {
+	border-collapse: collapse;
 }
 
-/* ==========================================
-   STATE LOGIC: ALERT LEVELS
-   ========================================== */
+.markdown-rendered th {
+	background-color: rgba(var(--nerv-crimson-rgb), 0.08);
+	color: var(--nerv-crimson);
+	text-transform: uppercase;
+	font-size: 0.85em;
+	letter-spacing: 0.06em;
+	border-bottom: 2px solid var(--nerv-crimson);
+}
 
-@keyframes alarm-flicker-heavy {
+.markdown-rendered td,
+.markdown-rendered th {
+	border: 1px solid var(--nerv-border);
+	padding: 4px 8px;
+}
+
+.markdown-rendered tr:hover {
+	background-color: rgba(var(--nerv-crimson-rgb), 0.04);
+}
+
+/* Tags */
+.tag {
+	text-transform: uppercase;
+	font-size: 0.8em;
+	letter-spacing: 0.05em;
+}
+
+/* Links */
+a.internal-link {
+	text-decoration-style: dotted;
+	text-underline-offset: 3px;
+}
+
+a.internal-link:hover {
+	text-shadow: 0 0 8px rgba(var(--nerv-blue-rgb), 0.5);
+}
+
+/* Checkboxes */
+.task-list-item-checkbox:checked {
+	background-color: var(--nerv-crimson);
+	border-color: var(--nerv-crimson);
+}
+
+/* ============================================================
+   6. CALLOUTS (NERV Alert Levels)
+   ============================================================ */
+
+/* All callouts get the industrial treatment */
+.callout {
+	border-left: 3px solid var(--nerv-crimson);
+	background-color: rgba(var(--nerv-crimson-rgb), 0.04);
+	border: 1px solid var(--nerv-border);
+	border-left: 3px solid var(--nerv-crimson);
+}
+
+.callout-title {
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.85em;
+}
+
+/* Danger/Warning callouts = emergency red */
+.callout[data-callout="warning"],
+.callout[data-callout="danger"],
+.callout[data-callout="caution"],
+.callout[data-callout="bug"],
+.callout[data-callout="failure"],
+.callout[data-callout="fail"],
+.callout[data-callout="missing"] {
+	border-left-color: var(--nerv-emergency);
+	background-color: rgba(var(--nerv-emergency-rgb), 0.04);
+}
+
+/* Info callouts = Pattern Blue */
+.callout[data-callout="info"],
+.callout[data-callout="note"],
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"] {
+	border-left-color: var(--nerv-blue);
+	background-color: rgba(var(--nerv-blue-rgb), 0.04);
+}
+
+/* Tip/Success callouts = data yellow */
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-callout="important"],
+.callout[data-callout="check"],
+.callout[data-callout="done"],
+.callout[data-callout="success"] {
+	border-left-color: var(--nerv-yellow);
+	background-color: rgba(var(--nerv-yellow-rgb), 0.04);
+}
+
+/* ============================================================
+   7. BUTTONS / INPUTS / MENUS
+   ============================================================ */
+
+button.mod-cta {
+	background-color: var(--nerv-crimson);
+	color: var(--nerv-black);
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-weight: 700;
+	border: none;
+	box-shadow: 0 0 10px rgba(var(--nerv-crimson-rgb), 0.2);
+}
+
+button.mod-cta:hover {
+	background-color: #dd4411;
+	box-shadow: 0 0 16px rgba(var(--nerv-crimson-rgb), 0.4);
+}
+
+button {
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	font-size: 0.9em;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+	border: 1px solid var(--nerv-border);
+	background-color: #0c0a08;
+	color: var(--nerv-amber);
+}
+
+input:focus,
+textarea:focus {
+	border-color: var(--nerv-crimson);
+	box-shadow: 0 0 0 1px rgba(var(--nerv-crimson-rgb), 0.3);
+}
+
+/* Context / suggestion menus */
+.suggestion-container,
+.menu {
+	background-color: var(--nerv-surface);
+	border: 1px solid var(--nerv-border);
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.65);
+}
+
+.suggestion-item.is-selected,
+.menu-item:hover {
+	background-color: rgba(var(--nerv-crimson-rgb), 0.12);
+	color: var(--nerv-crimson);
+}
+
+/* Modal dialogs */
+.modal {
+	background-color: var(--nerv-surface);
+	border: 1px solid var(--nerv-crimson);
+	box-shadow: 0 0 40px rgba(var(--nerv-crimson-rgb), 0.15);
+}
+
+.modal-title {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--nerv-crimson);
+}
+
+/* Settings */
+.setting-item {
+	border-top: 1px solid var(--nerv-border);
+}
+
+/* Toggles */
+.checkbox-container.is-enabled {
+	background-color: var(--nerv-crimson);
+}
+
+/* ============================================================
+   8. SCROLLBARS
+   ============================================================ */
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(var(--nerv-crimson-rgb), 0.2);
+	border: 1px solid rgba(var(--nerv-crimson-rgb), 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(var(--nerv-crimson-rgb), 0.4);
+}
+
+/* ============================================================
+   9. STATE LOGIC — TAG-DRIVEN ALERTS
+   ============================================================ */
+
+@keyframes nerv-flicker {
 	0%,
 	100% {
 		opacity: 1;
-		filter: brightness(1.3);
+		filter: brightness(1.15);
 	}
 	50% {
-		opacity: 0.7;
-		filter: brightness(0.8);
+		opacity: 0.8;
+		filter: brightness(0.85);
 	}
 }
 
 /* Pattern Blue: #alert/angel */
 .markdown-source-view.mod-cm6[data-tags*="alert/angel"],
 .markdown-rendered[data-tags*="alert/angel"] {
-	background-color: rgba(var(--nerv-blue-rgb), 0.08) !important;
-	outline: 3px solid var(--nerv-blue);
-	outline-offset: -3px;
+	background-color: rgba(var(--nerv-blue-rgb), 0.06) !important;
+	outline: 2px solid var(--nerv-blue);
+	outline-offset: -2px;
 }
 
 /* Pattern Red: #alert/terminal */
 .markdown-source-view.mod-cm6[data-tags*="alert/terminal"],
 .markdown-rendered[data-tags*="alert/terminal"] {
-	background-color: rgba(var(--nerv-red-rgb), 0.1) !important;
-	outline: 3px solid var(--nerv-red);
-	outline-offset: -3px;
-	animation: alarm-flicker-heavy 100ms infinite; /* 10Hz Industrial Flicker */
+	background-color: rgba(var(--nerv-emergency-rgb), 0.08) !important;
+	outline: 2px solid var(--nerv-emergency);
+	outline-offset: -2px;
+	animation: nerv-flicker 100ms infinite;
 }
 
-/* ==========================================
-   CRT POST-PROCESSING: SCANLINES
-   ========================================== */
+/* ============================================================
+   10. CRT POST-PROCESSING
+   ============================================================ */
 
-body:after {
-	content: " ";
-	display: block;
+/* Scanline overlay — 2px pitch, very subtle */
+body::after {
+	content: "";
 	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background:
-		linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%),
-		linear-gradient(
-			90deg,
-			rgba(255, 0, 0, 0.03),
-			rgba(0, 255, 0, 0.01),
-			rgba(0, 0, 255, 0.03)
-		);
-	background-size:
-		100% 2.5px,
-		2.5px 100%; /* 2.5px Pitch */
+	inset: 0;
+	background: repeating-linear-gradient(
+		to bottom,
+		transparent 0px,
+		transparent 1px,
+		rgba(0, 0, 0, 0.08) 1px,
+		rgba(0, 0, 0, 0.08) 2px
+	);
 	z-index: 9999;
 	pointer-events: none;
-	opacity: 0.5;
 }
 
-/* MAGI CONSENSUS TAB STYLING */
-.workspace-tab-header.is-active {
-	background-color: var(--nerv-orange);
-	color: #000 !important;
-	box-shadow: 0 0 10px rgba(var(--nerv-orange-rgb), 0.4);
+/* Text glow — applied to body text for CRT phosphor effect */
+.markdown-rendered p,
+.markdown-rendered li {
+	text-shadow: 0 0 1px rgba(var(--nerv-amber-rgb), 0.15);
+}
+
+/* ============================================================
+   11. GRAPH VIEW
+   ============================================================ */
+
+.graph-view.color-fill {
+	color: var(--nerv-crimson);
+}
+
+.graph-view.color-circle {
+	color: var(--nerv-muted);
+}
+
+.graph-view.color-line {
+	color: var(--nerv-border);
+}
+
+.graph-view.color-text {
+	color: var(--nerv-amber);
+}
+
+.graph-view.color-fill-highlight {
+	color: var(--nerv-emergency);
+}
+
+/* ============================================================
+   12. SEARCH
+   ============================================================ */
+
+.search-result-file-title {
+	color: var(--nerv-crimson);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	font-size: 0.9em;
+}
+
+.search-result-file-matched-text {
+	color: var(--nerv-yellow);
+	background-color: rgba(var(--nerv-yellow-rgb), 0.1);
+}
+
+/* ============================================================
+   13. TOOLTIPS
+   ============================================================ */
+
+.tooltip {
+	background-color: var(--nerv-surface);
+	border: 1px solid var(--nerv-crimson);
+	color: var(--nerv-amber);
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   14. RIBBON (left icon bar)
+   ============================================================ */
+
+.workspace-ribbon {
+	background-color: var(--nerv-black);
+	border-right: 1px solid var(--nerv-border);
+}
+
+.side-dock-ribbon-action {
+	color: var(--nerv-muted);
+}
+
+.side-dock-ribbon-action:hover {
+	color: var(--nerv-crimson);
+}
+
+/* ============================================================
+   15. PREFERS-REDUCED-MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+	.markdown-source-view.mod-cm6[data-tags*="alert/terminal"],
+	.markdown-rendered[data-tags*="alert/terminal"] {
+		animation: none;
+	}
+
+	body::after {
+		display: none;
+	}
 }

@@ -34,8 +34,8 @@ To apply and test the NERV UI in your own Obsidian vault:
 
 - **Trigger**: Tactical tags like `#alert/angel` shift the environment.
 - **Alert Levels**:
-  - **Pattern Blue (#alert/angel)**: High-level detection state.
-  - **Pattern Red (#alert/terminal)**: Emergency state with a **10Hz industrial flicker**.
+    - **Pattern Blue (#alert/angel)**: High-level detection state.
+    - **Pattern Red (#alert/terminal)**: Emergency state with a **10Hz industrial flicker**.
 
 ### 3. Magi (strategic)
 
@@ -65,10 +65,10 @@ To enable real-time synchronization between this repository and your Obsidian va
 1. **Delete any existing `obsidian-nerv` folder** in your `.obsidian/themes/` directory.
 2. **Open Command Prompt as Administrator**.
 3. **Run the following command**:
-   ```cmd
-   mklink /D "C:\Path\To\Your\Vault\.obsidian\themes\obsidian-nerv" "c:\Users\user\Documents\GitHub\obsidian-nerv"
-   ```
-   _Replace `C:\Path\To\Your\Vault` with your actual Obsidian vault path._
+    ```cmd
+    mklink /D "C:\Path\To\Your\Vault\.obsidian\themes\obsidian-nerv" "c:\Users\user\Documents\GitHub\obsidian-nerv"
+    ```
+    _Replace `C:\Path\To\Your\Vault` with your actual Obsidian vault path._
 
 ---
 
