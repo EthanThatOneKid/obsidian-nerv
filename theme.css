@@ -1,205 +1,215 @@
 /*
-  NERV Terminal Design System v1.0
-  Industrial Brutalist UI inspired by Neon Genesis Evangelion
-  Author: NERV Technical Department
+  NERV Terminal FUI System v2.0
+  Industrial Logic & Forensic Reconstruction
+  Inspired by Ikuto Yamashita's "Sore o nasumono"
 */
 
 .theme-dark {
 	/* ==========================================
-       TIER 1: FOUNDATION (Raw Values)
-       ========================================== */
-	--color-nerv-orange: #ff9900;
-	--color-nerv-orange-rgb: 255, 153, 0;
-	--color-nerv-red: #ff0000;
-	--color-nerv-red-rgb: 255, 0, 0;
-	--color-nerv-blue: #0055ff;
-	--color-nerv-blue-rgb: 0, 85, 255;
-	--color-nerv-bg: #0d0d0d;
-	--dimension-grid: 4px;
+     TIER 1: FOUNDATION (Archive-Correct)
+     ========================================== */
+	--nerv-orange: #ff9900;
+	--nerv-orange-rgb: 255, 153, 0;
+	--nerv-red: #ff0000;
+	--nerv-red-rgb: 255, 0, 0;
+	--nerv-blue: #0055ff;
+	--nerv-blue-rgb: 0, 85, 255;
+	--nerv-bg: #0d0d0d;
+	--grid-base: 4px;
 
 	/* ==========================================
-       TIER 2: SEMANTIC (Intent-Based Aliases)
-       ========================================== */
-	--color-text-alert: var(--color-nerv-orange);
-	--color-text-critical: var(--color-nerv-red);
-	--color-text-sync: var(--color-nerv-blue);
-	--color-bg-base: var(--color-nerv-bg);
-	--spacing-ui-density: 2px;
-	--br-industrial: 0px; /* Industrial Brutalism: No rounded corners */
+     TIER 2: SEMANTIC (Intent-Based)
+     ========================================== */
+	--color-text-alert: var(--nerv-orange);
+	--color-text-critical: var(--nerv-red);
+	--color-text-sync: var(--nerv-blue);
+	--color-bg-base: var(--nerv-bg);
+	--spacing-density: 2px;
+	--br-brutal: 0px;
 
 	/* ==========================================
-       TIER 3: COMPONENT (Obsidian Mapping)
-       ========================================== */
+     TIER 3: COMPONENT (Obsidian Implementation)
+     ========================================== */
 	--background-primary: var(--color-bg-base);
 	--background-secondary: #121212;
-	--background-secondary-alt: #1a1a1a;
+	--background-secondary-alt: #0a0a0a;
 
 	--text-normal: var(--color-text-alert);
 	--text-muted: #8b4513;
-	--text-faint: #4a2c10;
-	--text-accent: var(--color-nerv-orange);
-	--text-accent-hover: #ffb84d;
+	--text-faint: #331a00;
+	--text-accent: var(--nerv-orange);
 
-	--interactive-accent: var(--color-nerv-orange);
+	--interactive-accent: var(--nerv-orange);
 	--interactive-accent-hover: #ffb84d;
 
-	--divider-color: #332200;
+	--divider-color: #442200;
 	--background-modifier-border: #221100;
 
-	/* Global Overrides */
-	--nav-item-color-active: var(--color-nerv-orange);
-	--status-bar-background: var(--color-bg-base);
-	--radius-s: var(--br-industrial);
-	--radius-m: var(--br-industrial);
-	--radius-l: var(--br-industrial);
+	/* Typography Logic */
+	--font-header: "Matisse EB", "Impact", "Arial Black", sans-serif;
+	--font-data: "JetBrains Mono", "Roboto Mono", monospace;
+
+	--radius-s: var(--br-brutal);
+	--radius-m: var(--br-brutal);
+	--radius-l: var(--br-brutal);
 }
 
 /* ==========================================
-   PRODUCTION IMPLEMENTATION: HIGH DENSITY
+   TYPOGRAPHIC AGGRESSION
    ========================================== */
 
-/* Remove rounded corners everywhere */
-* {
-	border-radius: var(--br-industrial) !important;
+h1,
+h2,
+h3,
+h4,
+.view-header-title {
+	font-family: var(--font-header);
+	text-transform: uppercase;
+	transform: scaleX(0.85); /* Forensic Compression */
+	transform-origin: left;
+	letter-spacing: 0.1em;
+	margin-top: 1.5em;
+	border-bottom: 2px solid var(--divider-color);
+	padding-bottom: 2px;
 }
 
-/* Nav & File Explorer Saturation */
+body,
+.markdown-source-view,
+.markdown-rendered {
+	font-family: var(--font-data);
+	font-size: 13px;
+	line-height: 1.4;
+	letter-spacing: 0.02em;
+}
+
+/* Technical Data Readouts */
+code,
+.cm-inline-code,
+.status-bar,
+.nav-file-title,
+.nav-folder-title {
+	font-family: var(--font-data);
+	font-size: 11px;
+	text-transform: uppercase;
+}
+
+/* ==========================================
+   INDUSTRIAL BRUTALISM: LAYOUT
+   ========================================== */
+
+* {
+	border-radius: var(--br-brutal) !important;
+}
+
+/* Data Saturation */
 .nav-folder,
 .nav-file {
-	--nav-item-size: 1.1rem;
-	--nav-item-spacing: var(--spacing-ui-density);
+	--nav-item-spacing: 1px;
 }
 
 .nav-file-title,
 .nav-folder-title {
-	padding-top: 2px;
-	padding-bottom: 2px;
-	font-family: "JetBrains Mono", "Roboto Mono", monospace;
-	text-transform: uppercase;
-	letter-spacing: 0.02em;
+	padding: 1px 4px;
 }
 
-/* Status Bar */
-.status-bar {
-	font-family: "JetBrains Mono", monospace;
-	text-transform: uppercase;
-	font-size: 10px;
-	border-top: 1px solid var(--divider-color);
-}
-
-/* Workspace Layout */
 .workspace-leaf {
 	border: 1px solid var(--divider-color);
+	position: relative;
 }
 
-.workspace-tab-header-container {
-	border-bottom: 2px solid var(--color-nerv-orange);
+/* HUD Viewport Brackets */
+.workspace-leaf:before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 20px;
+	height: 20px;
+	border-top: 2px solid var(--nerv-orange);
+	border-left: 2px solid var(--nerv-orange);
+	z-index: 5;
+	pointer-events: none;
+	opacity: 0.4;
 }
-
-.workspace-tab-header.is-active {
-	background-color: var(--color-nerv-orange);
-	color: #000 !important;
-	font-weight: bold;
-}
-
-/* ==========================================
-   INTERACTION & STATE LOGIC (Alert Levels)
-   ========================================== */
-
-/* Sync Heartbeat Pulse */
-@keyframes sync-pulse {
-	0% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0.4;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-.sync-status-icon.is-progressing {
-	animation: sync-pulse 2000ms linear infinite;
-}
-
-/* Flicker Animation for Terminal Alert */
-@keyframes alert-flicker {
-	0% {
-		opacity: 1;
-	}
-	5% {
-		opacity: 0.2;
-	}
-	10% {
-		opacity: 1;
-	}
-	15% {
-		opacity: 0.8;
-	}
-	20% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-/* Pattern Blue Alert: #alert/angel */
-.markdown-source-view.mod-cm6[data-tags*="alert/angel"],
-.markdown-rendered[data-tags*="alert/angel"] {
-	background-color: rgba(var(--color-nerv-blue-rgb), 0.05) !important;
-	outline: 2px solid var(--color-nerv-blue);
-	outline-offset: -2px;
-}
-
-/* Pattern Red Alert: #alert/terminal */
-.markdown-source-view.mod-cm6[data-tags*="alert/terminal"],
-.markdown-rendered[data-tags*="alert/terminal"] {
-	background-color: rgba(var(--color-nerv-red-rgb), 0.05) !important;
-	outline: 2px solid var(--color-nerv-red);
-	outline-offset: -2px;
-	animation: alert-flicker 100ms infinite;
-}
-
-/* ==========================================
-   VISUAL EFFECTS: CRT SCANLINES
-   ========================================== */
 
 .workspace-leaf:after {
 	content: "";
 	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+	border-bottom: 2px solid var(--nerv-orange);
+	border-right: 2px solid var(--nerv-orange);
+	z-index: 5;
+	pointer-events: none;
+	opacity: 0.4;
+}
+
+/* ==========================================
+   STATE LOGIC: ALERT LEVELS
+   ========================================== */
+
+@keyframes alarm-flicker-heavy {
+	0%,
+	100% {
+		opacity: 1;
+		filter: brightness(1.3);
+	}
+	50% {
+		opacity: 0.7;
+		filter: brightness(0.8);
+	}
+}
+
+/* Pattern Blue: #alert/angel */
+.markdown-source-view.mod-cm6[data-tags*="alert/angel"],
+.markdown-rendered[data-tags*="alert/angel"] {
+	background-color: rgba(var(--nerv-blue-rgb), 0.08) !important;
+	outline: 3px solid var(--nerv-blue);
+	outline-offset: -3px;
+}
+
+/* Pattern Red: #alert/terminal */
+.markdown-source-view.mod-cm6[data-tags*="alert/terminal"],
+.markdown-rendered[data-tags*="alert/terminal"] {
+	background-color: rgba(var(--nerv-red-rgb), 0.1) !important;
+	outline: 3px solid var(--nerv-red);
+	outline-offset: -3px;
+	animation: alarm-flicker-heavy 100ms infinite; /* 10Hz Industrial Flicker */
+}
+
+/* ==========================================
+   CRT POST-PROCESSING: SCANLINES
+   ========================================== */
+
+body:after {
+	content: " ";
+	display: block;
+	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	bottom: 0;
+	right: 0;
 	background:
-		linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
+		linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%),
 		linear-gradient(
 			90deg,
-			rgba(255, 0, 0, 0.02),
+			rgba(255, 0, 0, 0.03),
 			rgba(0, 255, 0, 0.01),
-			rgba(0, 0, 80, 0.02)
+			rgba(0, 0, 255, 0.03)
 		);
 	background-size:
-		100% 3px,
-		3px 100%;
+		100% 2.5px,
+		2.5px 100%; /* 2.5px Pitch */
+	z-index: 9999;
 	pointer-events: none;
-	z-index: 10;
-	opacity: 0.6;
+	opacity: 0.5;
 }
 
-/* Typography Overrides */
-body {
-	font-family: "JetBrains Mono", "Roboto Mono", "MS Gothic", sans-serif;
-	letter-spacing: 0.03em;
-}
-
-h1,
-h2,
-h3 {
-	text-transform: uppercase;
-	border-bottom: 1px solid var(--divider-color);
-	padding-bottom: 4px;
-	margin-top: 1.5em;
+/* MAGI CONSENSUS TAB STYLING */
+.workspace-tab-header.is-active {
+	background-color: var(--nerv-orange);
+	color: #000 !important;
+	box-shadow: 0 0 10px rgba(var(--nerv-orange-rgb), 0.4);
 }

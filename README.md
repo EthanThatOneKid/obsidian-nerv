@@ -1,27 +1,27 @@
 # NERV UI for Obsidian
 
-An industrial brutalist command center interface for Obsidian, inspired by the MAGI and EVA-01 displays from *Neon Genesis Evangelion*.
+An industrial brutalist command center interface for Obsidian, inspired by the MAGI and EVA-01 displays from _Neon Genesis Evangelion_.
 
 ## Local Testing & Development
 
 To apply and test the NERV UI in your own Obsidian vault:
 
 1. **Locate your Vault's Theme Folder**:
-   - In your vault, navigate to `.obsidian/themes/`.
+    - In your vault, navigate to `.obsidian/themes/`.
 2. **Setup the Project**:
-   - Clone or copy this repository into that folder: `.obsidian/themes/obsidian-nerv/`.
-   - Alternatively, you can use a symlink (recommended for active development):
-     ```bash
-     # Windows (Command Prompt as Admin)
-     mklink /D "C:\Path\To\Your\Vault\.obsidian\themes\obsidian-nerv" "c:\Users\ethan\Documents\GitHub\obsidian-nerv"
-     ```
+    - Clone or copy this repository into that folder: `.obsidian/themes/obsidian-nerv/`.
+    - Alternatively, you can use a symlink (recommended for active development):
+        ```bash
+        # Windows (Command Prompt as Admin)
+        mklink /D "C:\Path\To\Your\Vault\.obsidian\themes\obsidian-nerv" "c:\Users\ethan\Documents\GitHub\obsidian-nerv"
+        ```
 3. **Activate the Theme**:
-   - Open Obsidian **Settings > Appearance**.
-   - Select **NERV UI** from the **Themes** dropdown.
-   - Set **Base color scheme** to **Dark**.
+    - Open Obsidian **Settings > Appearance**.
+    - Select **NERV UI** from the **Themes** dropdown.
+    - Set **Base color scheme** to **Dark**.
 4. **Development Workflow**:
-   - This project uses **Prettier** for formatting. Run `npm run format` after making changes.
-   - Obsidian will automatically hot-reload your theme as you save `theme.css`.
+    - This project uses **Prettier** for formatting. Run `npm run format` after making changes.
+    - Obsidian will automatically hot-reload your theme as you save `theme.css`.
 
 For advanced usage (Pattern Red/Blue alerts), see the [Operator's Manual](file:///C:/Users/ethan/.gemini/antigravity/brain/defc4dbd-76ef-4830-b1d1-bd25f754ed0a/operators_manual.md).
 
