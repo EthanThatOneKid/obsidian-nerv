@@ -9,6 +9,8 @@ MAGI and EVA-01 displays from _Neon Genesis Evangelion_.
 
 ## Local testing and development
 
+For detailed information on creating and contributing themes to Obsidian, refer to the [official Obsidian Theme documentation](https://help.obsidian.md/Extending+Obsidian/Themes).
+
 To apply and test the NERV UI in your own Obsidian vault:
 
 1. **Locate your vault's theme folder**:
