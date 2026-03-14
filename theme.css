@@ -26,22 +26,22 @@
    1. FOUNDATION TOKENS
    ============================================================ */
 .theme-dark {
-	/* --- raw palette (show-accurate) --- */
-	--nerv-red: #aa1100;
-	--nerv-red-rgb: 170, 17, 0;
+	/* --- raw palette (forensic reconstruction) --- */
+	--nerv-red: #9b0a06;
+	--nerv-red-rgb: 155, 10, 6;
 	--nerv-text: #bfa898;
 	--nerv-text-rgb: 191, 168, 152;
-	--nerv-emergency: #ee0000;
-	--nerv-emergency-rgb: 238, 0, 0;
-	--nerv-green: #00cc88;
-	--nerv-green-rgb: 0, 204, 136;
-	--nerv-blue: #4488cc;
-	--nerv-blue-rgb: 68, 136, 204;
-	--nerv-yellow: #ccaa00;
-	--nerv-yellow-rgb: 204, 170, 0;
-	--nerv-black: #080808;
+	--nerv-emergency: #c52f0e;
+	--nerv-emergency-rgb: 197, 47, 14;
+	--nerv-green: #33b26a;
+	--nerv-green-rgb: 51, 178, 106;
+	--nerv-blue: #6dabe4;
+	--nerv-blue-rgb: 109, 171, 228;
+	--nerv-yellow: #d8c818;
+	--nerv-yellow-rgb: 216, 200, 24;
+	--nerv-black: #050101;
 	--nerv-surface: #0e0c0a;
-	--nerv-border: #221a15;
+	--nerv-border: #590605;
 	--nerv-muted: #887060;
 	--nerv-faint: #443830;
 
@@ -117,10 +117,10 @@
 
 	--tag-color: var(--nerv-yellow);
 	--tag-background: rgba(204, 170, 0, 0.08);
-	--tag-border-color: rgba(204, 170, 0, 0.2);
+	--tag-border-color: rgba(216, 200, 24, 0.2);
 
 	--inline-code-color: var(--nerv-yellow);
-	--code-normal: var(--nerv-amber);
+	--code-normal: var(--nerv-text);
 	--code-background: #0c0a08;
 
 	--blockquote-border-color: var(--nerv-green);
