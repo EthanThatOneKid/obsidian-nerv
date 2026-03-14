@@ -4,11 +4,7 @@ An industrial brutalist command center interface for Obsidian, inspired by the M
 
 ## Gallery
 
-![MAGI System Diagnostic](screenshots/magi-diagnostic-melchior-1.png)
-![Evangelion Unit Status](screenshots/evangelion-unit-status.png)
-![Pilot Biometric Snapshot](screenshots/pilot-biometrics-eva-01-ikari.png)
-![MAGI Consensus Diagram](screenshots/magi-consensus-operation-yashima.png)
-![NERV Network Topology](screenshots/nerv-facilities-and-reference-codes.png)
+![NERV Terminal Walkthrough](demo/demo.mp4)
 
 ## Local testing and development
 
