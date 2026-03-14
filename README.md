@@ -23,7 +23,52 @@ To apply and test the NERV UI in your own Obsidian vault:
     - This project uses **Prettier** for formatting. Run `npm run format` after making changes.
     - Obsidian will automatically hot-reload your theme as you save `theme.css`.
 
-For advanced usage (pattern red/blue alerts), see the [Operator's Manual](./operators_manual.md).
+## Operational tiers
+
+### 1. Command center (global)
+
+- **Aesthetic**: Pattern Blue accents and high-contrast countdowns.
+- **CRT Simulation**: 2.5px pitch scanlines and RGB phosphor-bleed are applied globally.
+
+### 2. Entry plug (tactical)
+
+- **Trigger**: Tactical tags like `#alert/angel` shift the environment.
+- **Alert Levels**:
+  - **Pattern Blue (#alert/angel)**: High-level detection state.
+  - **Pattern Red (#alert/terminal)**: Emergency state with a **10Hz industrial flicker**.
+
+### 3. Magi (strategic)
+
+- **Status Readouts**: Use monospaced JetBrains Mono for all diagnostic logs and UI labels.
+- **Typography**: Matisse EB headers are mechanically compressed (`scaleX(0.85)`) to evoke the "urgency motif" of the original Tokyo-3 terminals.
+
+## Tag-driven logic
+
+Add the following tags to your note properties (YAML) to shift the UI state:
+
+| Tag                  | State        | Visual Effect                |
+| :------------------- | :----------- | :--------------------------- |
+| `#alert/angel`       | Pattern Blue | Blue tint + Solid 3px border |
+| `#alert/terminal`    | Pattern Red  | Red tint + **10Hz Flicker**  |
+| `#status/diagnostic` | Monospaced   | High-density data layout     |
+
+## Layout principles
+
+- **Industrial Brutalism**: `border-radius` is set to `0px` across the entire application.
+- **Data Saturation**: Padding and margins are minimal to simulate "The Burden of Knowledge."
+- **Viewport Brackets**: Each workspace leaf is framed by HUD-style angular brackets.
+
+## Developer setup (symlink)
+
+To enable real-time synchronization between this repository and your Obsidian vault:
+
+1. **Delete any existing `obsidian-nerv` folder** in your `.obsidian/themes/` directory.
+2. **Open Command Prompt as Administrator**.
+3. **Run the following command**:
+   ```cmd
+   mklink /D "C:\Path\To\Your\Vault\.obsidian\themes\obsidian-nerv" "c:\Users\user\Documents\GitHub\obsidian-nerv"
+   ```
+   _Replace `C:\Path\To\Your\Vault` with your actual Obsidian vault path._
 
 ---
 
