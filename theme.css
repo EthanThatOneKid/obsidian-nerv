@@ -1,0 +1,64 @@
+/*
+  NERV UI for Obsidian
+  Inspired by MAGI and EVA-01 Interfaces
+  Author: NERV Technical Department
+*/
+
+.theme-dark {
+	/* Base NERV Palette */
+	--background-primary: #0a0a0a;
+	--background-secondary: #0f0f0f;
+	--background-secondary-alt: #1a1a1a;
+
+	/* NERV Orange and Red Accents */
+	--text-normal: #ff7b00;
+	--text-muted: #8b4513;
+	--text-faint: #4a2c10;
+	--text-accent: #ff4500;
+	--text-accent-hover: #ff6a00;
+
+	/* Link and Interactive Colors */
+	--link-color: #ff8c00;
+	--link-color-hover: #ffa500;
+	--interactive-accent: #ff7b00;
+	--interactive-accent-hover: #ff9d00;
+
+	/* UI Borders and Dividers */
+	--divider-color: #5a3a10;
+	--background-modifier-border: #3a2a10;
+
+	/* Scrollbars */
+	--scrollbar-active-thumb-bg: #ff7b00;
+	--scrollbar-bg: #1a1a1a;
+	--scrollbar-thumb-bg: #8b4513;
+
+	/* Cursor and Selection */
+	--text-selection: rgba(255, 123, 0, 0.2);
+	--caret-color: #ff7b00;
+}
+
+/* Geometric Layout Tweaks */
+
+.workspace-leaf {
+	border: 1px solid var(--divider-color);
+}
+
+.workspace-tab-header-container {
+	border-bottom: 2px solid var(--interactive-accent);
+}
+
+.workspace-tab-header.is-active {
+	background-color: var(--interactive-accent);
+	color: #000;
+}
+
+.titlebar {
+	background-color: #000;
+	border-bottom: 1px solid var(--divider-color);
+}
+
+/* NERV-style font fallback */
+body {
+	font-family: "Inter", "Roboto Mono", "MS Gothic", sans-serif;
+	letter-spacing: 0.05em;
+}
