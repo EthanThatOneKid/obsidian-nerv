@@ -22,6 +22,48 @@
  *   Data yellow  #ccaa00  (telemetry / sync markers)
  */
 
+/* @settings
+name: NERV Terminal System
+id: obsidian-nerv
+settings:
+  - 
+    id: nerv-red
+    title: Accent Red (Central Dogma)
+    type: variable-color
+    format: hex
+    default: '#9b0a06'
+  - 
+    id: nerv-text
+    title: Text Primary
+    type: variable-color
+    format: hex
+    default: '#bfa898'
+  - 
+    id: nerv-emergency
+    title: Emergency Red (Alerts)
+    type: variable-color
+    format: hex
+    default: '#c52f0e'
+  - 
+    id: nerv-green
+    title: Green (Success/Safe)
+    type: variable-color
+    format: hex
+    default: '#33b26a'
+  - 
+    id: nerv-blue
+    title: Pattern Blue
+    type: variable-color
+    format: hex
+    default: '#6dabe4'
+  - 
+    id: nerv-yellow
+    title: Yellow (Sync/Warning)
+    type: variable-color
+    format: hex
+    default: '#d8c818'
+*/
+
 /* ============================================================
    1. FOUNDATION TOKENS
    ============================================================ */
@@ -168,11 +210,154 @@
 	--status-bar-background: var(--nerv-black);
 }
 
+.theme-light {
+	/* --- raw palette (light variation) --- */
+	--nerv-red: #9b0a06;
+	--nerv-red-rgb: 155, 10, 6;
+	--nerv-text: #2a1f1a;
+	--nerv-text-rgb: 42, 31, 26;
+	--nerv-emergency: #c52f0e;
+	--nerv-emergency-rgb: 197, 47, 14;
+	--nerv-green: #299e5a;
+	--nerv-green-rgb: 41, 158, 90;
+	--nerv-blue: #3a7abf;
+	--nerv-blue-rgb: 58, 122, 191;
+	--nerv-yellow: #a89300;
+	--nerv-yellow-rgb: 168, 147, 0;
+	--nerv-black: #fcfbfa;
+	--nerv-surface: #f4f0ec;
+	--nerv-border: #d2c5bf;
+	--nerv-muted: #826e64;
+	--nerv-faint: #bbaa9f;
+
+	/* --- semantic --- */
+	--br: 0px;
+
+	/* --- Obsidian overrides --- */
+	--background-primary: var(--nerv-black);
+	--background-primary-alt: var(--nerv-surface);
+	--background-secondary: var(--nerv-surface);
+	--background-secondary-alt: #eae4de;
+	--background-modifier-border: var(--nerv-border);
+	--background-modifier-form-field: #ffffff;
+	--background-modifier-form-field-highlighted: #f4f0ec;
+	--background-modifier-box-shadow: rgba(0, 0, 0, 0.05);
+	--background-modifier-success: #e6f6ed;
+	--background-modifier-error: #fdece8;
+	--background-modifier-error-rgb: 253, 236, 232;
+	--background-modifier-error-hover: #fcd5cc;
+	--background-modifier-cover: rgba(252, 251, 250, 0.86);
+
+	--text-normal: var(--nerv-text);
+	--text-muted: var(--nerv-muted);
+	--text-faint: var(--nerv-faint);
+	--text-on-accent: #ffffff;
+	--text-on-accent-inverted: var(--nerv-red);
+	--text-error: var(--nerv-emergency);
+	--text-error-hover: #a32205;
+	--text-accent: var(--nerv-red);
+	--text-accent-hover: #800603;
+
+	--interactive-normal: #ffffff;
+	--interactive-hover: #eae4de;
+	--interactive-accent: var(--nerv-red);
+	--interactive-accent-rgb: var(--nerv-red-rgb);
+	--interactive-accent-hover: #800603;
+
+	--scrollbar-bg: transparent;
+	--scrollbar-thumb-bg: rgba(155, 10, 6, 0.15);
+	--scrollbar-active-thumb-bg: rgba(155, 10, 6, 0.25);
+
+	--highlight-mix-blend-mode: multiply;
+
+	--titlebar-background: var(--nerv-black);
+	--titlebar-background-focused: var(--nerv-surface);
+
+	--tab-text-color: var(--nerv-muted);
+	--tab-text-color-focused: var(--nerv-text);
+	--tab-text-color-focused-active: var(--nerv-red);
+	--tab-text-color-focused-active-current: #ffffff;
+	--tab-background-active: var(--nerv-red);
+
+	--divider-color: var(--nerv-border);
+
+	/* Heading colors — NERV hierarchy */
+	--h1-color: var(--nerv-red);
+	--h2-color: var(--nerv-red);
+	--h3-color: var(--nerv-green);
+	--h4-color: var(--nerv-yellow);
+	--h5-color: var(--nerv-blue);
+	--h6-color: var(--nerv-muted);
+
+	--strong-color: var(--nerv-red);
+	--em-color: var(--nerv-yellow);
+	--bold-color: var(--nerv-red);
+	--italic-color: var(--nerv-green);
+
+	--link-color: var(--nerv-blue);
+	--link-color-hover: #21598f;
+	--link-external-color: var(--nerv-green);
+	--link-external-color-hover: #1b7340;
+	--link-unresolved-color: var(--nerv-muted);
+
+	--tag-color: var(--nerv-yellow);
+	--tag-background: rgba(168, 147, 0, 0.08);
+	--tag-border-color: rgba(168, 147, 0, 0.2);
+
+	--inline-code-color: var(--nerv-yellow);
+	--code-normal: var(--nerv-text);
+	--code-background: #ffffff;
+
+	--blockquote-border-color: var(--nerv-green);
+
+	--table-header-color: var(--nerv-red);
+	--table-header-background: rgba(155, 10, 6, 0.06);
+
+	--checkbox-color: var(--nerv-green);
+	--checkbox-color-hover: #1b7340;
+	--checkbox-border-color: var(--nerv-muted);
+
+	--list-marker-color: var(--nerv-red);
+
+	--nav-item-color: var(--nerv-muted);
+	--nav-item-color-hover: var(--nerv-text);
+	--nav-item-color-active: var(--nerv-green);
+	--nav-item-background-hover: rgba(41, 158, 90, 0.05);
+	--nav-item-background-active: rgba(41, 158, 90, 0.08);
+
+	--graph-line: var(--nerv-border);
+	--graph-node: var(--nerv-green);
+	--graph-node-focused: var(--nerv-red);
+	--graph-node-tag: var(--nerv-yellow);
+	--graph-node-attachment: var(--nerv-blue);
+
+	--callout-default: var(--nerv-red);
+
+	--radius-s: var(--br);
+	--radius-m: var(--br);
+	--radius-l: var(--br);
+	--radius-xl: var(--br);
+
+	--input-shadow: 0 0 0 0;
+	--input-shadow-hover: 0 0 0 0;
+	--shadow-s: 0 1px 3px rgba(0, 0, 0, 0.1);
+	--shadow-l: 0 4px 18px rgba(0, 0, 0, 0.15);
+
+	/* typography */
+	--font-text: "JetBrains Mono", "Fira Code", "Roboto Mono", monospace;
+	--font-monospace: "JetBrains Mono", "Fira Code", "Roboto Mono", monospace;
+	--font-interface: "JetBrains Mono", "Fira Code", "Roboto Mono", monospace;
+
+	--status-bar-font-size: 11px;
+	--status-bar-text-color: var(--nerv-muted);
+	--status-bar-background: var(--nerv-black);
+}
+
 /* ============================================================
    2. GLOBAL RESETS
    ============================================================ */
 * {
-	border-radius: 0px !important;
+	border-radius: 0px;
 }
 
 body {
@@ -257,9 +442,10 @@ em,
 	border-bottom: 1px solid var(--nerv-border);
 }
 
-.workspace-tab-header.is-active {
-	background-color: var(--nerv-red) !important;
-	color: var(--nerv-black) !important;
+body .workspace-tab-header.is-active,
+.workspace-leaf .workspace-tab-header.is-active {
+	background-color: var(--nerv-red);
+	color: var(--nerv-black);
 	box-shadow:
 		0 0 12px rgba(var(--nerv-red-rgb), 0.35),
 		inset 0 -2px 0 rgba(0, 0, 0, 0.2);
@@ -301,9 +487,9 @@ em,
 }
 
 /* Code blocks */
-.markdown-rendered pre,
-.cm-s-obsidian .HyperMD-codeblock {
-	background-color: #060504 !important;
+body .markdown-rendered pre,
+body .cm-s-obsidian .HyperMD-codeblock {
+	background-color: var(--background-secondary-alt);
 	border: 1px solid var(--nerv-border);
 	border-left: 3px solid var(--nerv-red);
 }
@@ -435,7 +621,7 @@ button.mod-cta {
 }
 
 button.mod-cta:hover {
-	background-color: #cc2200;
+	background-color: var(--interactive-accent-hover);
 	box-shadow: 0 0 16px rgba(var(--nerv-red-rgb), 0.4);
 }
 
@@ -452,7 +638,7 @@ input[type="password"],
 input[type="number"],
 textarea {
 	border: 1px solid var(--nerv-border);
-	background-color: #0c0a08;
+	background-color: var(--background-modifier-form-field);
 	color: var(--nerv-text);
 }
 
@@ -538,17 +724,17 @@ textarea:focus {
 }
 
 /* Pattern Blue: #alert/angel */
-.markdown-source-view.mod-cm6[data-tags*="alert/angel"],
-.markdown-rendered[data-tags*="alert/angel"] {
-	background-color: rgba(var(--nerv-blue-rgb), 0.06) !important;
+body .markdown-source-view.mod-cm6[data-tags*="alert/angel"],
+body .markdown-rendered[data-tags*="alert/angel"] {
+	background-color: rgba(var(--nerv-blue-rgb), 0.06);
 	outline: 2px solid var(--nerv-blue);
 	outline-offset: -2px;
 }
 
 /* Pattern Red: #alert/terminal */
-.markdown-source-view.mod-cm6[data-tags*="alert/terminal"],
-.markdown-rendered[data-tags*="alert/terminal"] {
-	background-color: rgba(var(--nerv-emergency-rgb), 0.08) !important;
+body .markdown-source-view.mod-cm6[data-tags*="alert/terminal"],
+body .markdown-rendered[data-tags*="alert/terminal"] {
+	background-color: rgba(var(--nerv-emergency-rgb), 0.08);
 	outline: 2px solid var(--nerv-emergency);
 	outline-offset: -2px;
 	animation: nerv-flicker 100ms infinite;

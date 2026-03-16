@@ -7,6 +7,17 @@ Genesis Evangelion_.
 
 https://github.com/user-attachments/assets/f0c06cc4-0b06-4e93-a8ff-6f2df5618a0f
 
+## Installation
+
+Once `obsidian-nerv` is added to the community theme gallery, you can install it directly within Obsidian:
+
+1. Open Obsidian **Settings**.
+2. Go to **Appearance** -> **Themes** -> **Manage**.
+3. Search for **NERV UI** (or `obsidian-nerv`).
+4. Click **Install and use**.
+
+_Note: The theme supports both **Dark** and **Light** modes, seamlessly adjusting to your preferred base color scheme._
+
 ## Local testing and development
 
 For detailed information on creating and contributing themes to Obsidian, refer
@@ -33,6 +44,14 @@ To apply and test the NERV UI in your own Obsidian vault:
     - This project uses **Prettier** for formatting. Run `npm run format` after
       making changes.
     - Obsidian will automatically hot-reload your theme as you save `theme.css`.
+
+## Customization
+
+This theme supports the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin! With Style Settings installed, you can natively adjust the NERV terminal colors—including the signature Central Dogma red, emergency alerts, and telemetry accents—without touching any CSS.
+
+1. Install "Style Settings" from the Obsidian Community Plugins directory.
+2. Enable the plugin.
+3. Open **Settings > Style Settings** and look for **NERV Terminal System**.
 
 ## Operational tiers
 
