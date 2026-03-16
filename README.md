@@ -9,6 +9,8 @@ https://github.com/user-attachments/assets/f0c06cc4-0b06-4e93-a8ff-6f2df5618a0f
 
 ## Installation
 
+> **Note**: This theme is currently under review for inclusion in the official Obsidian community theme gallery. You can track the progress or review our submission over at [obsidianmd/obsidian-releases#11081](https://github.com/obsidianmd/obsidian-releases/pull/11081).
+
 Once `obsidian-nerv` is added to the community theme gallery, you can install it directly within Obsidian:
 
 1. Open Obsidian **Settings**.
