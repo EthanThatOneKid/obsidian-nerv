@@ -1,15 +1,17 @@
-# NERV UI for Obsidian
+# obsidian-nerv
 
-An industrial brutalist command center interface for Obsidian, inspired by the
-MAGI and EVA-01 displays from _Neon Genesis Evangelion_.
+A NERV theme for Obsidian, inspired by the MAGI and EVA-01 displays from _Neon
+Genesis Evangelion_.
 
-## Gallery
+## Watch the demo
 
-[▶ Watch the demo](demo/demo.mp4)
+https://github.com/user-attachments/assets/f0c06cc4-0b06-4e93-a8ff-6f2df5618a0f
 
 ## Local testing and development
 
-For detailed information on creating and contributing themes to Obsidian, refer to the [official Obsidian Theme documentation](https://help.obsidian.md/Extending+Obsidian/Themes).
+For detailed information on creating and contributing themes to Obsidian, refer
+to the
+[official Obsidian Theme documentation](https://help.obsidian.md/Extending+Obsidian/Themes).
 
 To apply and test the NERV UI in your own Obsidian vault:
 

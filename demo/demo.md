@@ -9,12 +9,11 @@ aliases:
 
 ## Terminal `MELCHIOR-1` — Active
 
-**OPERATOR:** Dr. R. Akagi
-**DATE:** 2015.09.13 — 14:32:07 JST
-**CLEARANCE:** Level 7 — _Command Staff_
+**OPERATOR:** Dr. R. Akagi **DATE:** 2015.09.13 — 14:32:07 JST **CLEARANCE:**
+Level 7 — _Command Staff_
 
-> [!important] System notice
-> This terminal is connected to `MELCHIOR-1`. All inputs are logged by CASPER-3.
+> [!important] System notice This terminal is connected to `MELCHIOR-1`. All
+> inputs are logged by CASPER-3.
 
 ---
 
@@ -33,26 +32,26 @@ aliases:
 ### Pilot biometric snapshot — `EVA-01`
 
 ```
- ╔══════════════════════════════════════════════╗
- ║  PILOT: IKARI, SHINJI       AGE: 14          ║
- ║  A10 NERVE CLIP: CONNECTED                   ║
- ║  LCL PURITY: 99.9999088%                     ║
- ║  MENTAL CONTAMINATION: 0.03%                 ║
- ╠══════════════════════════════════════════════╣
- ║  SYNC RATE                                   ║
- ║  ████████████████████░░░░░░░░░░  41.3%       ║
- ║  [OK]          [CAUTION]      [DANGER]       ║
- ╠══════════════════════════════════════════════╣
- ║  PSYCHOGRAPH — HARMONICS TEST                ║
- ║                                              ║
- ║  +1.0 ┤    ╭──╮                              ║
- ║       │   ╱    ╲       ╭──╮                  ║
- ║   0.0 ┤──╱      ╲─────╱    ╲────             ║
- ║       │          ╲   ╱      ╲                ║
- ║  -1.0 ┤           ╰─╯        ╰──             ║
- ║       └──┬──┬──┬──┬──┬──┬──┬──┬──            ║
- ║         -4 -3 -2 -1  0 +1 +2 +3              ║![[Pasted image 20260313203155.png]]
- ╚══════════════════════════════════════════════╝
+╔══════════════════════════════════════════════╗
+║  PILOT: IKARI, SHINJI       AGE: 14          ║
+║  A10 NERVE CLIP: CONNECTED                   ║
+║  LCL PURITY: 99.9999088%                     ║
+║  MENTAL CONTAMINATION: 0.03%                 ║
+╠══════════════════════════════════════════════╣
+║  SYNC RATE                                   ║
+║  ████████████████████░░░░░░░░░░  41.3%       ║
+║  [OK]          [CAUTION]      [DANGER]       ║
+╠══════════════════════════════════════════════╣
+║  PSYCHOGRAPH — HARMONICS TEST                ║
+║                                              ║
+║  +1.0 ┤    ╭──╮                              ║
+║       │   ╱    ╲       ╭──╮                  ║
+║   0.0 ┤──╱      ╲─────╱    ╲────             ║
+║       │          ╲   ╱      ╲                ║
+║  -1.0 ┤           ╰─╯        ╰──             ║
+║       └──┬──┬──┬──┬──┬──┬──┬──┬──            ║
+║         -4 -3 -2 -1  0 +1 +2 +3              ║![[Pasted image 20260313203155.png]]
+╚══════════════════════════════════════════════╝
 ```
 
 ---
@@ -106,26 +105,26 @@ graph TD
 
 ### Active monitoring — Angel engagement log
 
-> [!danger] 14:32:07 — Pattern Red
-> Blood type: **BLUE**. Designation: _4th Angel — SHAMSHEL_. AT Field detected at perimeter line D-17.
+> [!danger] 14:32:07 — Pattern Red Blood type: **BLUE**. Designation: _4th Angel
+> — SHAMSHEL_. AT Field detected at perimeter line D-17.
 
-> [!warning] 14:28:44 — Pilot alert
-> Sync rate fluctuation detected in `EVA-01`. Recommend pilot assessment before deployment.
+> [!warning] 14:28:44 — Pilot alert Sync rate fluctuation detected in `EVA-01`.
+> Recommend pilot assessment before deployment.
 
-> [!info] 14:15:00 — Pattern Blue
-> Anomalous waveform at bearing 270, distance 12km. MAGI probability of Angel: **99.998%**.
+> [!info] 14:15:00 — Pattern Blue Anomalous waveform at bearing 270, distance
+> 12km. MAGI probability of Angel: **99.998%**.
 
-> [!note] 13:50:22 — Shift log
-> B-shift handoff complete. All cage systems nominal. Umbilical bridges retracted.
+> [!note] 13:50:22 — Shift log B-shift handoff complete. All cage systems
+> nominal. Umbilical bridges retracted.
 
-> [!tip] Operator reminder
-> Coolant pressure in cage 7 requires scheduled maintenance — file work order via `CASPER-3`.
+> [!tip] Operator reminder Coolant pressure in cage 7 requires scheduled
+> maintenance — file work order via `CASPER-3`.
 
-> [!success] 12:00:00 — System check
-> MAGI triple-redundancy self-test: **PASS**. All three cores in agreement.
+> [!success] 12:00:00 — System check MAGI triple-redundancy self-test: **PASS**.
+> All three cores in agreement.
 
-> [!failure] 09:17:33 — Subsystem fault
-> Sensor array grid `S-44` offline. Backup routing through `S-45` engaged.
+> [!failure] 09:17:33 — Subsystem fault Sensor array grid `S-44` offline. Backup
+> routing through `S-45` engaged.
 
 ---
 
@@ -143,7 +142,8 @@ graph TD
 
 ### Operational directives
 
-1. All personnel must report to designated **battle stations** upon Pattern Red declaration
+1. All personnel must report to designated **battle stations** upon Pattern Red
+   declaration
 2. EVA pilots are to maintain minimum sync rate of _30%_ during standby
 3. Unauthorized access to Terminal Dogma will result in immediate detention
     1. Section 2 enforcement protocol applies
@@ -153,11 +153,13 @@ graph TD
 
 ### Classified — Project E internal memo
 
-> "The Eva series are not simply weapons. They are born from Adam, and it is only through the bond with a human soul that they can be made to act. This is the cruel truth of our work."
-> — _Dr. Yui Ikari, personal notes (CLASSIFIED — SEELE eyes only)_
+> "The Eva series are not simply weapons. They are born from Adam, and it is
+> only through the bond with a human soul that they can be made to act. This is
+> the cruel truth of our work." — _Dr. Yui Ikari, personal notes (CLASSIFIED —
+> SEELE eyes only)_
 
-> > _Annotation by Dr. R. Akagi:_
-> > Mother's conscience lives inside CASPER. I know this. I choose not to think about it.
+> > _Annotation by Dr. R. Akagi:_ Mother's conscience lives inside CASPER. I know
+> > this. I choose not to think about it.
 
 ---
 
@@ -201,26 +203,29 @@ graph LR
 
 $$P = \frac{E}{t} = \frac{1.21 \times 10^{15} \text{ J}}{0.003 \text{ s}} = 4.03 \times 10^{17} \text{ W}$$
 
-> [!note] Power source
-> Entire Japanese national grid routed through NERV transformers. Estimated brownout duration: _30 seconds_.
+> [!note] Power source Entire Japanese national grid routed through NERV
+> transformers. Estimated brownout duration: _30 seconds_.
 
 ---
 
 ### End of diagnostic
 
 ```
-  ┌──────────────────────────────────────┐
-  │  NERV — GOD'S IN HIS HEAVEN.         │
-  │  ALL'S RIGHT WITH THE WORLD.         │
-  │                                      │
-  │  SESSION CLOSED — 14:45:00 JST       │
-  │  TERMINAL: MELCHIOR-1                │
-  │  OPERATOR: AKAGI, R.                 │
-  └──────────────────────────────────────┘
+┌──────────────────────────────────────┐
+│  NERV — GOD'S IN HIS HEAVEN.         │
+│  ALL'S RIGHT WITH THE WORLD.         │
+│                                      │
+│  SESSION CLOSED — 14:45:00 JST       │
+│  TERMINAL: MELCHIOR-1                │
+│  OPERATOR: AKAGI, R.                 │
+└──────────────────────────────────────┘
 ```
 
 ---
 
 _NERV Technical Department · Geofront · Tokyo-3_[^1]
 
-[^1]: This document is classified under NERV Security Directive 7. Unauthorized distribution is a violation of the **Human Instrumentality Committee** charter.
+[^1]:
+    This document is classified under NERV Security Directive 7. Unauthorized
+    distribution is a violation of the **Human Instrumentality Committee**
+    charter.
