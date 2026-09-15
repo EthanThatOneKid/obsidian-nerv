@@ -708,40 +708,7 @@ textarea:focus {
 }
 
 /* ============================================================
-   9. STATE LOGIC — TAG-DRIVEN ALERTS
-   ============================================================ */
-
-@keyframes nerv-flicker {
-	0%,
-	100% {
-		opacity: 1;
-		filter: brightness(1.15);
-	}
-	50% {
-		opacity: 0.8;
-		filter: brightness(0.85);
-	}
-}
-
-/* Pattern Blue: #alert/angel */
-body .markdown-source-view.mod-cm6[data-tags*="alert/angel"],
-body .markdown-rendered[data-tags*="alert/angel"] {
-	background-color: rgba(var(--nerv-blue-rgb), 0.06);
-	outline: 2px solid var(--nerv-blue);
-	outline-offset: -2px;
-}
-
-/* Pattern Red: #alert/terminal */
-body .markdown-source-view.mod-cm6[data-tags*="alert/terminal"],
-body .markdown-rendered[data-tags*="alert/terminal"] {
-	background-color: rgba(var(--nerv-emergency-rgb), 0.08);
-	outline: 2px solid var(--nerv-emergency);
-	outline-offset: -2px;
-	animation: nerv-flicker 100ms infinite;
-}
-
-/* ============================================================
-   10. CRT POST-PROCESSING
+   9. CRT POST-PROCESSING
    ============================================================ */
 
 /* Scanline overlay — 2px pitch, very subtle */
@@ -767,7 +734,7 @@ body::after {
 }
 
 /* ============================================================
-   11. GRAPH VIEW
+   10. GRAPH VIEW
    ============================================================ */
 
 .graph-view.color-fill {
@@ -791,7 +758,7 @@ body::after {
 }
 
 /* ============================================================
-   12. SEARCH
+   11. SEARCH
    ============================================================ */
 
 .search-result-file-title {
@@ -807,7 +774,7 @@ body::after {
 }
 
 /* ============================================================
-   13. TOOLTIPS
+   12. TOOLTIPS
    ============================================================ */
 
 .tooltip {
@@ -820,7 +787,7 @@ body::after {
 }
 
 /* ============================================================
-   14. RIBBON (left icon bar)
+   13. RIBBON (left icon bar)
    ============================================================ */
 
 .workspace-ribbon {
@@ -837,15 +804,10 @@ body::after {
 }
 
 /* ============================================================
-   15. PREFERS-REDUCED-MOTION
+   14. PREFERS-REDUCED-MOTION
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
-	.markdown-source-view.mod-cm6[data-tags*="alert/terminal"],
-	.markdown-rendered[data-tags*="alert/terminal"] {
-		animation: none;
-	}
-
 	body::after {
 		display: none;
 	}

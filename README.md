@@ -55,39 +55,44 @@ This theme supports the [Style Settings](https://github.com/mgmeyers/obsidian-st
 2. Enable the plugin.
 3. Open **Settings > Style Settings** and look for **NERV Terminal System**.
 
-## Operational tiers
+## Current scope
 
-### 1. Command center (global)
+NERV is currently a theme-first visual system for Obsidian. Its goal is to make
+ordinary Obsidian surfaces feel like a coherent NERV terminal without requiring
+an additional runtime or plugin.
 
-- **Aesthetic**: Pattern Blue accents and high-contrast countdowns.
-- **CRT Simulation**: 2.5px pitch scanlines and RGB phosphor-bleed are applied
-  globally.
+### Included in the theme
 
-### 2. Entry plug (tactical)
+- Industrial NERV palette with dark and light variants.
+- Monospaced terminal typography, compressed headings, dense spacing, and
+  squared-off surfaces.
+- HUD-like workspace framing, scanlines, phosphor-style text treatment, and
+  terminal-inspired controls.
+- NERV treatment for sidebars, tabs, menus, settings, search, graph view,
+  callouts, tables, code blocks, tags, and status surfaces.
+- Style Settings variables for adjusting the terminal palette.
 
-- **Trigger**: Tactical tags like `#alert/angel` shift the environment.
-- **Alert Levels**:
-    - **Pattern Blue (#alert/angel)**: High-level detection state.
-    - **Pattern Red (#alert/terminal)**: Emergency state with a **10Hz industrial
-      flicker**.
+### Visual layers
 
-### 3. Magi (strategic)
+- **Command center** is the global interface treatment: palette, density,
+  framing, CRT simulation, and terminal controls.
+- **Magi** is the global information-treatment layer: monospaced readouts,
+  compressed headings, and diagnostic typography.
 
-- **Status Readouts**: Use monospaced JetBrains Mono for all diagnostic logs and
-  UI labels.
-- **Typography**: Matisse EB headers are mechanically compressed
-  (`scaleX(0.85)`) to evoke the "urgency motif" of the original Tokyo-3
-  terminals.
+These are design layers, not modes or settings that must be enabled separately.
 
-## Tag-driven logic
+### Backlogged capabilities
 
-Add the following tags to your note properties (YAML) to shift the UI state:
+The following ideas are intentionally not implemented by the theme yet:
 
-| Tag                  | State        | Visual Effect                |
-| :------------------- | :----------- | :--------------------------- |
-| `#alert/angel`       | Pattern Blue | Blue tint + Solid 3px border |
-| `#alert/terminal`    | Pattern Red  | Red tint + **10Hz Flicker**  |
-| `#status/diagnostic` | Monospaced   | High-density data layout     |
+- **Entry Plug** note-level visual states.
+- Automatic mapping from semantic YAML `tags` to note appearance.
+- Pattern Blue, Pattern Red, and Diagnostic note-state transitions.
+- Commands, toggles, notifications, sound, haptics, or other runtime behavior.
+
+Adding a tag or `cssclasses` property to a note does not currently change its
+appearance. The theme-only state system is tracked in
+[issue #1](https://github.com/EthanThatOneKid/obsidian-nerv/issues/1).
 
 ## Layout principles
 
