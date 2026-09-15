@@ -1,6 +1,4 @@
 ---
-tags:
-    - status/diagnostic
 aliases:
     - MAGI-DIAG-001
 ---
